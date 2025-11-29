@@ -4,11 +4,11 @@
 
 ## Entidade e relacionamento:
 
-<img src="https://i.im.ge/2025/11/29/4jxLU9.diagrama-classe.png" alt="diagrama entidade RL">
+[![4jxLU9.diagrama-classe.png](https://i.im.ge/2025/11/29/4jxLU9.diagrama-classe.png)](https://im.ge/i/diagrama-classe.4jxLU9)
 
 -------------
 
 ## Classe:
 
-<img src="https://i.im.ge/2025/11/29/4jx7WF.diagrama-entidade-RL.png" alt="diagrama classe">
+[![4jx7WF.diagrama-entidade-RL.png](https://i.im.ge/2025/11/29/4jx7WF.diagrama-entidade-RL.png)](https://im.ge/i/diagrama-entidade-RL.4jx7WF)
 
