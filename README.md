@@ -1,1 +1,13 @@
 # trabalho-final-3C
+
+# diagramas:
+
+## Entidade e relacionamento:
+
+<img src="https://i.im.ge/2025/11/29/4jx7WF.diagrama-entidade-RL.png" alt="diagrama entidade RL" border="0">
+
+-------------
+
+## Classe:
+
+<img src="https://i.im.ge/2025/11/29/4jxLU9.diagrama-classe.png" alt="diagrama classe" border="0">
