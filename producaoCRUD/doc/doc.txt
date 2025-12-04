@@ -1,0 +1,18 @@
+	Objetivo:
+		Banco de senhas, o usuário cria diretórios onde dentro destes diretórios ele pode criar boxes
+	cada box contem sua própria senha, e dentro desta box possui senhas salvas do usuário, cada senha é salva em compartimentos com seu próprio nome.
+
+	Funcionamento:
+		Usuário pode criar vários diretórios, e os diretórios possuem apenas um usuário, cada rota destes diretórios é dividida por seu id, por exemplo: 	diretório de id = 1, rota /diretório/1 .
+
+		Cada usuário pode acessar apenas os diretórios que possuem relação pessoal com seu id, por exemplo: usuario_id = 1 , diretório 2 possui id_usuario =		1 ,nesse caso o usuário possui acesso a rota /diretório/id, caso contrario ele é redirecionado para a rota /pagina principal .
+
+		 Dentro dos diretórios existem Boxes, que são filiadas a cada diretório, cada diretório possui sua lista de 
+	boxes especifica, no funcionamento do banco de dados caso um diretório seja apagado todas as boxes vao junto com ele, cada box possui sua própria chave de 	acesso, que ao ser aberta da acesso as senhas salvas
+
+		Nas senhas, elas são divididas em títulos, e cada uma é salva individualmente, ainda em implementação mas possível token de verificação para aberta desta 	pagina.
+
+
+	Lembrando: cada usuário possui seus próprios diretórios, cada diretório seu próprio box e cada box suas próprias senhas. Todos relacionados por ID
+	
+	

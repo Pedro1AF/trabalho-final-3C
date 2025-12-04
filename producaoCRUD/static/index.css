@@ -1,0 +1,193 @@
+/* ===========================
+   CONFIGURAÇÃO GERAL
+=========================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    background: #4c6ef5;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* ===========================
+   BOTÃO PRINCIPAL
+=========================== */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+main > button {
+    display: block;
+    margin: 0 auto 25px auto;
+    padding: 12px 20px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main > button:hover {
+    background: #3f8a42;
+}
+
+/* ===========================
+   LISTA DE DIRETÓRIOS
+=========================== */
+.diretorio-box {
+    position: relative; /* necessário para o menu */
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 70%;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* posição do botão de três pontinhos */
+.menu-container {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    padding: 5px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.menu-btn:hover {
+    background: #eee;
+}
+
+/* menu escondido */
+.menu-opcoes {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 140px;
+    z-index: 10;
+}
+
+/* itens do menu */
+.menu-opcoes a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+}
+
+.menu-opcoes a:hover {
+    background: #f0f0f0;
+}
+
+/* ===========================
+   POP-UP E OVERLAY
+=========================== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    width: 350px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+
+.popup h2 {
+    text-align: center;
+}
+
+.popup input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.popup button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.popup button:hover {
+    background: #3b53d4;
+}
+
+/* Botão de fechar */
+.btn-close {
+    background: #e04f4f !important;
+}
+
+.btn-close:hover {
+    background: #c63f3f !important;
+}
+
+/* ===========================
+   ANIMAÇÃO DO POPUP
+=========================== */
+.overlay.show {
+    display: flex;
+}
+
+.popup {
+    animation: zoom 0.25s ease;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
