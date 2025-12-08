@@ -1,0 +1,40 @@
+body {
+    background: #f5f6fa;
+    font-family: Arial;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    max-width: 550px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.12);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.voltar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #4c6ef5;
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    background: #3a56d4;
+}

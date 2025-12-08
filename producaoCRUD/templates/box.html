@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Box: {{ box.nome }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/box.css') }}">
+</head>
+
+<body>
+
+    <h1>Box: {{ box.nome }}</h1>
+
+    <p>
+        <a href="{{ url_for('diretorio', id=diretorio.id) }}">
+            Voltar ao diretório
+        </a>
+    </p>
+
+    <section>
+        <h2>Senhas salvas</h2>
+
+        {% if senhas %}
+            <ul>
+                {% for s in senhas %}
+                    <li>{{ s.titulo }} — {{ s.senha_salva }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma senha salva nessa box ainda.</p>
+        {% endif %}
+    </section>
+
+    <section>
+        <h2>Adicionar nova senha</h2>
+
+        <form method="POST" action="{{ url_for('adicionar_senha', dir_id=diretorio.id, box_id=box.id) }}">
+            <input type="text" name="titulo" placeholder="Título (ex: Gmail)" required><br><br>
+            <input type="text" name="senha" placeholder="Senha a ser salva" required><br><br>
+            <button type="submit">Salvar senha</button>
+        </form>
+
+    </section>
+
+</body>
+</html>

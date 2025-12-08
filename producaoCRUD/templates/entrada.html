@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/entrada.css')}}">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2>Login</h2>
+
+
+
+    <form action="" method="post">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="password" placeholder="Digite sua senha" maxlength="20" minlength="8"
+          required>
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+      <input type="submit" value="Entrar" class="continue-btn">
+    </form>
+
+
+  </div>
+
+  <script>
+    function togglePassword() {
+      const senhaInput = document.getElementById('senha');
+      const toggleIcon = document.querySelector('.toggle-password');
+      if (senhaInput.type === 'password') {
+        senhaInput.type = 'text';
+        toggleIcon.textContent = '🙈';
+      } else {
+        senhaInput.type = 'password';
+        toggleIcon.textContent = '👁️';
+      }
+    }
+  </script>
+</body>
+
+</html>

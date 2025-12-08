@@ -1,0 +1,75 @@
+body {
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 450px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.12);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.dados-atuais {
+    background: #eef2ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #4a63e7;
+}
+
+.dados-atuais h3 {
+    margin-top: 0;
+    color: #2a3cad;
+}
+
+.dados-atuais p {
+    margin: 6px 0;
+    color: #333;
+}
+
+.form-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    transition: 0.2s;
+}
+
+.form-box input:focus {
+    border-color: #4a63e7;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #4a63e7;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #394fd1;
+}

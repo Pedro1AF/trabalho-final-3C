@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/diretorio.css')}}">
+    <title>Página Principal</title>
+</head>
+
+<body>
+    <header>
+        <h1>Este é o diretório "{{ diretorio.nome }}"</h1>
+    </header>
+
+    <main>
+        <button type="button" onclick="abrirPopup()">Criar Box</button>
+
+        <!-- Pop-up principal -->
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <form action="" method="POST">
+                    <h2>Criar novo diretório</h2>
+                    <input type="text" id="nome" name="boxName" placeholder="Nome da box" required>
+                    <input type="text" id="pass" name="boxPassword" placeholder="Senha de acesso" required>
+                    <button type="submit" onclick="return enviarDados()">Enviar</button>
+                    <button type="button" class="btn-close" onclick="fecharPopup()">Fechar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lista de diretórios -->
+        {% for box in boxes %}
+        <div class="diretorio-box">
+    
+            <!-- Botão de opções -->
+            <div class="menu-container">
+                <button class="menu-btn">⋮</button>
+
+                <div class="menu-opcoes">
+                    <a href="#">Excluir</a>
+                </div>
+            </div>
+
+            <h2>{{ box.nome }}</h2>
+                <a href="{{ url_for('abrir_box', id=box.box_id) }}">
+                    <button type="button">Entrar na box</button>
+                </a>
+        </div>
+        {% endfor %}
+    </main>
+
+    <script src="/static/diretorio.js"></script>
+</body>
+
+</html>

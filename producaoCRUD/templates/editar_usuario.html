@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editar_usuario.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Editar Usuário</h2>
+
+    <!-- BLOCO MOSTRANDO DADOS ATUAIS -->
+    <div class="dados-atuais">
+        <h3>Dados Atuais</h3>
+        <p><strong>Nome:</strong> {{ usuario.nome }}</p>
+        <p><strong>Email:</strong> {{ usuario.email }}</p>
+        <p><strong>Senha:</strong> {{ usuario.password }}</p>
+    </div>
+
+    <!-- FORMULÁRIO DE EDIÇÃO -->
+    <form method="POST" class="form-box">
+        <label>Novo nome:</label>
+        <input type="text" name="nome" value="{{ usuario.nome }}" required>
+
+        <label>Novo email:</label>
+        <input type="email" name="email" value="{{ usuario.email }}" required>
+
+        <label>Nova senha:</label>
+        <input type="text" name="password" value="{{ usuario.password }}" required>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+</div>
+
+</body>
+</html>

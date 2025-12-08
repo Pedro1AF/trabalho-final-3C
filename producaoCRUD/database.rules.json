@@ -1,0 +1,38 @@
+{
+  "rules": {
+    
+    "usuarios": {
+      ".read": false,      
+      "$uid": {
+        
+        ".read": "auth != null && auth.uid === $uid",
+
+        
+        ".write": "auth != null && root.child('usuarios/' + auth.uid + '/isAdmin').val() === true"
+      }
+    },
+
+    "diretorios": {
+      ".read": false,
+      
+      "$dirId": {
+        ".read": "data.child('criadorId').val() === auth.uid",
+
+        ".write": "auth != null && ((!data.exists() && newData.child('criadorId').val() === auth.uid) (data.exists() && data.child('criadorId').val() === auth.uid))"
+      }
+    },
+
+    "boxes": {
+      ".read": false,
+      "$dirId": {
+        "$boxId": {
+          
+          ".read": "root.child('diretorios/' + $dirId + '/criadorId').val() === auth.uid",
+
+          
+          ".write": "auth != null && root.child('diretorios/' + $dirId + '/criadorId').val() === auth.uid"
+        }
+      }
+    }
+  }
+}

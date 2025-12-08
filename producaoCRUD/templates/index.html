@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <title>Página Principal</title>
+</head>
+
+<body>
+    <header>
+        <h1>Olá, bem-vindo(a) {{ current_user.nome }}</h1>
+        <a href="/logout"><button>Sair</button></a>
+    </header>
+
+    <main>
+        <button type="button" onclick="abrirPopup()">Criar Diretório</button>
+
+        <!-- Pop-up principal -->
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <form action="" method="POST">
+
+                    <h2>Criar novo diretório</h2>
+                    <input type="text" id="nome" name="nome" placeholder="Nome do diretório" required>
+                    <button type="submit" onclick="return enviarDados()">Enviar</button>
+                    <button type="button" class="btn-close" onclick="fecharPopup()">Fechar</button>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Lista de diretórios -->
+        {% for diretorio in diretorios_lista %}
+        <div class="diretorio-box">
+    
+            <!-- Botão de opções -->
+            <div class="menu-container">
+                <button class="menu-btn">⋮</button>
+
+                <div class="menu-opcoes">
+                    <a href="/delete/{{diretorio.id}}">Excluir</a>
+                </div>
+            </div>
+
+            <h2>{{ diretorio.nome }}</h2>
+                <a href="{{ url_for('diretorio', id=diretorio.id) }}">
+                    <button type="button">Entrar no diretório</button>
+                </a>
+        </div>
+        {% endfor %}
+    </main>
+
+    <script src="/static/index.js"></script>
+</body>
+
+</html>

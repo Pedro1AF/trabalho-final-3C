@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <title>Criar Conta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+<body>
+  <h1>Criar novo usuario</h1>
+  <form method="POST" action="{{ url_for('criar_conta') }}">
+    <input type="text" name="nome" placeholder="Nome" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Senha" required><br><br>
+    <button type="submit">Criar</button>
+  </form>
+
+  <h1 style="text-align:center;">Gerenciamento de Usuários</h1>
+
+  <table>
+    <tr>
+      <th>ID Interno</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+
+    {% for uid, user in usuarios.items() %}
+    <tr>
+      <td>{{ user.user_id_int }}</td>
+      <td>{{ user.nome }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <a href="{{ url_for('editar_usuario', uid=uid) }}">
+          <button>Editar</button>
+        </a>
+      </td>
+      <td>
+        {% if user.user_id_int != 1 %}
+        <form method="POST" action="{{ url_for('deletar_usuario', uid=uid) }}" style="display:inline;">
+          <button class="delete-btn" onclick="return confirm('Tem certeza?')">Excluir</button>
+        </form>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p><a href="{{ url_for('login') }}">Voltar ao login</a></p>
+</body>
+
+</html>
